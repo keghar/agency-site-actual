@@ -64,7 +64,7 @@ function Header({
 
   return (
     <Container>
-      <div className="flex w-full flex-col justify-between gap-y-4 md:flex-row md:items-center">
+      <div className="flex w-full flex-col-reverse justify-between gap-y-4 md:flex-row md:items-center">
         <Link href="/" aria-label="Home">
           {/* <Logomark
             className="h-8 sm:hidden"

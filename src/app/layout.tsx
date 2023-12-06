@@ -7,8 +7,9 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Rooted | Web Design & Development',
-    default: 'Digital Design and marketing agency in costal Alabama',
+    default: 'Rooted | Web Design & Development',
   },
+  description: 'Digital Design and Marketing Agency in Costal Alabama',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
