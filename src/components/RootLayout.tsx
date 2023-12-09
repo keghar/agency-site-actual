@@ -71,7 +71,12 @@ function Header({
             invert={invert}
             filled={logoHovered}
           /> */}
-          <LogoTwo className=" flex h-full w-full justify-start rounded-2xl bg-white px-2 py-2 pb-4 md:h-full md:px-6 md:py-4 " />
+          <LogoTwo
+            className={clsx(
+              'flex h-full w-full justify-start rounded-2xl px-2 py-2 pb-4 md:h-full md:px-6 md:py-4 ',
+              invert ? 'bg-white' : 'bg-base',
+            )}
+          />
           {/* <div className="h-49 relative flex">
             <Image
               src="/rootedlogo.svg"
@@ -92,14 +97,14 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group h-8 w-8 rounded-full transition',
+              'group h-8 w-8 rounded-full pl-1 text-center transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-gray-200',
             )}
             aria-label="Toggle navigation"
           >
             <Icon
               className={clsx(
-                'h-6 w-6',
+                ' h-6 w-6',
                 invert
                   ? 'flex justify-center fill-white group-hover:fill-neutral-200'
                   : 'w-6 fill-neutral-950 group-hover:fill-neutral-700',
@@ -232,10 +237,13 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
             <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
-                  <div>
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                  <div className="flex flex-col text-white">
+                    <h2 className=" font-display text-base font-semibold text-white">
+                      Contact Info
                     </h2>
+                    <span>rootedagency.dev</span>
+                    <span>555-555-5555</span>
+
                     <Offices
                       invert
                       className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"

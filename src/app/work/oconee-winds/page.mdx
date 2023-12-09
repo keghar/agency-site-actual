@@ -1,0 +1,54 @@
+import logo from '@/images/clients/unseal/logomark-dark.svg'
+import imageHero from './hero.jpg'
+import imageEmilySelman from './emily-selman.jpg'
+
+export const caseStudy = {
+  client: 'Oconee Winds',
+  title: 'Oconee Winds Website | CMS | SEO',
+  description:
+    'Oconee Winds is a community symphonic band in Oconee County, South Carolina. The band is made up of volunteer musicians from all walks of life, including students, professionals, and retirees.',
+  summary: [
+    'Built a website with cutom CMS',
+    'We built them a custom website with a prismic CMS so they can easily add new events and edit content on the website.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2022-10',
+  service: 'Blockchain development',
+  testimonial: {
+    author: { name: 'David Harris', role: 'Band Memeber' },
+    content:
+      'Review here',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+We built them a custom website with a prismic CMS so they can easily update content
+
+## What we did
+
+<TagList>
+  <TagListItem>Website</TagListItem>
+  <TagListItem>CMS</TagListItem>
+  <TagListItem>SEO</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'David Harris', role: 'Band Memeber' }}
+  image={{ }}
+>
+ Review here
+</Blockquote>
+
+{/* <StatList>
+  <StatListItem value="34%" label="Fewer transactions" />
+  <StatListItem value="10%" label="Slower transactions" />
+  <StatListItem value="1000ms" label="Transaction latency" />
+  <StatListItem value="3" label="Active nodes" />
+</StatList> */}

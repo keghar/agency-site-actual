@@ -1,0 +1,54 @@
+import logo from '@/images/clients/family-fund/logomark-dark.svg'
+import imageHero from './hero.jpg'
+// import imageDebraFiscal from './debra-fiscal.jpg'
+
+export const caseStudy = {
+  client: 'Bay To Beach Pools LLC',
+  title: 'Website and SEO',
+  description:
+    'Bay To Beach Pools LLC is a company based out of Gulf Shore, Alabama. They specialize in maintaining and cleaning pools for residential and commercial properties.',
+  summary: [
+    'Bay To Beach Pools LLC is a company based out of Gulf Shore, Alabama. They specialize in maintaining and cleaning pools for residential and commercial properties.',
+    'We built them a landing page with a form to gain leads. We also did some SEO work to help them rank higher on Google.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023-01',
+  service: 'Web development',
+  testimonial: {
+    author: { name: 'David Nault', role: 'Owner' },
+    content:
+      'Review Here',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+We built them a website.
+
+## What we did
+
+<TagList>
+  <TagListItem>Landing Page</TagListItem>
+  <TagListItem>Form for leads</TagListItem>
+  <TagListItem>SEO</TagListItem>
+</TagList>
+
+<Blockquote
+  author={{ name: 'David Nault', role: 'Owner' }}
+ 
+>
+Review here
+</Blockquote>
+
+{/* <StatList>
+  <StatListItem value="25%" label="Less traffic" />
+  <StatListItem value="10x" label="Page load times" />
+  <StatListItem value="15%" label="Higher infra costs" />
+  <StatListItem value="$1.2M" label="Legal fees" />
+</StatList> */}

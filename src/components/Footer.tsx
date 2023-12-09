@@ -4,14 +4,15 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import LogoTwo from './LogoTwo'
 
 const navigation = [
   {
     title: 'Work',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
+      { title: 'Bay To Beach Pools LLC', href: '/' },
+      { title: 'Modern Stoneworks', href: '/' },
+      { title: 'Oconee Winds', href: '' },
       {
         title: (
           <>
@@ -85,8 +86,8 @@ function NewsletterForm() {
         Sign up for our newsletter
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+        Subscribe to get our latest articles on growing your business through
+        digital marketing.
       </p>
       <div className="relative mt-6">
         <input
@@ -120,12 +121,12 @@ export function Footer() {
             <NewsletterForm />
           </div>
         </div>
-        <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+        <div className="mb-20 mt-24 flex flex-wrap items-end justify-center gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12 md:justify-between">
           <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+            <LogoTwo className="flex h-full w-full max-w-lg justify-center " />
           </Link>
-          <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+          <p className="text-center text-sm text-neutral-700">
+            © Rooted Development {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>

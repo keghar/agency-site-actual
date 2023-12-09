@@ -20,25 +20,22 @@ import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import { Button } from '@/components/Button'
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['Bay To Beach Pools', logoPhobiaLight, 'https://baytobeachpools.com'],
+  ['Modern Stoneworks', logoFamilyFund],
+  ['Oconee Winds', logoUnseal],
+  ['Your Company Here', logoMailSmirk],
 ]
 
 function Clients() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-      <Container>
+      <Container className="flex flex-col items-center justify-center">
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with some amazing people
+            We’ve worked with some amazing companies
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -47,14 +44,22 @@ function Clients() {
             role="list"
             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
           >
-            {clients.map(([client, logo]: any) => (
+            {clients.map(([client, logo, url]: any) => (
               <li key={client}>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <Link href={`${url}`}>
+                    {/* <Image src={logo} alt={client} unoptimized /> */}
+                    <p className="text-white">{client}</p>
+                  </Link>
                 </FadeIn>
               </li>
             ))}
           </ul>
+          <div className="flex w-full justify-center">
+            <Button className="mt-10 " invert>
+              Our Work
+            </Button>
+          </div>
         </FadeInStagger>
       </Container>
     </div>
@@ -69,13 +74,13 @@ function CaseStudies({
   return (
     <>
       <SectionIntro
-        title="Harnessing technology for a brighter future"
+        title="Helping businesses grow with an online presence"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
+          We believe having a digital presence is important for every business.
+          Having a website and social media presence is important for getting
+          leads and gaining customers.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -126,16 +131,17 @@ function Services() {
     <>
       <SectionIntro
         eyebrow="Services"
-        title="We help you identify, explore and respond to new opportunities."
+        title="We help you take advantage of the opportunities that technology presents"
         className="mt-48 sm:mt-48 lg:mt-48"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          From a landing page to a full e-commerce site, we can help you get
+          your business online and in front of your customers. We can also help
+          you with your social media presence and marketing.
         </p>
       </SectionIntro>
       <Container className="mt-16">
-        <div className="lg:flex lg:items-center lg:justify-end">
+        <div className="pb-10 lg:flex lg:items-center lg:justify-end">
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
               <StylizedImage
@@ -147,23 +153,24 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages.
-              The rest of the website will be a shell that uses lorem ipsum
-              everywhere.
+              We specialize in crafting beautiful, high quality marketing pages
+              that will help you grow your business.
             </ListItem>
-            <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest
-              app frameworks, like Angular 1 and Google Web Toolkit.
+            <ListItem title="Social Media">
+              It is hard to take the time to set up your business on Google and
+              social media. We can help you set this up and create content and
+              ads on these platforms, to help you reach your customers.
             </ListItem>
             <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which
-              mainly means adding your logo to the Shopify store template we’ve
-              used for the past six years.
+              We can set up a custom online store-front for your business and
+              get your products and creations online helping you expand your
+              business all over the world.
             </ListItem>
             <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and
-              customised CMS. That’s why we run all of our client projects out
-              of a single, enormous Joomla instance.
+              If you have a content heavy website, we can help you set up a
+              custom content management system to help you manage your content.
+              From blogs to e-commerce, we have solutions that are user
+              friendly, to add content to your website.
             </ListItem>
           </List>
         </div>
@@ -183,10 +190,12 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-56 sm:mt-72 md:mt-56">
-        <FadeIn className="max-w-3xl">
+        <FadeIn faster className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-6xl">
             Digital Design and Marketing Agency located in Coastal Alabama
           </h1>
+        </FadeIn>
+        <FadeIn>
           <p className="mt-6 text-xl text-neutral-600">
             We are a design and development agency working at the intersection
             of design and technology. We here to help your buiness establish
@@ -199,14 +208,14 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      {/* <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Phobia', logo: logoPhobiaDark }}
       >
         The team at Studio went above and beyond with our onboarding, even
         finding a way to access the user’s microphone without triggering one of
         those annoying permission dialogs.
-      </Testimonial>
+      </Testimonial> */}
 
       <Services />
 

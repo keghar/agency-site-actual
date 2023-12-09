@@ -1,0 +1,55 @@
+import logo from '@/images/clients/phobia/logomark-dark.svg'
+import imageHero from './hero.jpg'
+
+
+export const caseStudy = {
+  client: 'Modern Stoneworks',
+  title: 'Website | SEO',
+  description:
+    'Stone countertop fabricator in Foley, AL.',
+  summary: [
+    'Stone countertop fabricator in Foley, AL.',
+    'We worked with Modern Stoneworks to create a website that would help them stand out from the competition. We also helped them with their SEO strategy to increase their visibility in search engines.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2022-06',
+  service: 'Website',
+  testimonial: {
+    author: { name: 'Ryan', role: 'Owner' },
+    content:
+      'Review Here',
+  },
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Overview
+
+We built them a website
+
+## What we did
+
+<TagList>
+  <TagListItem>Website</TagListItem>
+  <TagListItem>SEO</TagListItem>
+  <TagListItem>Lead Form</TagListItem>
+  
+</TagList>
+
+<Blockquote
+  author={{ name: 'Ryan', role: 'Owner' }}
+  image={{ }}
+>
+  Review Here
+</Blockquote>
+
+<StatList>
+  <StatListItem value="20%" label="Churn rate" />
+  <StatListItem value="5x" label="Uninstalls" />
+  <StatListItem value="2.3" label="App store rating" />
+  <StatListItem value="8" label="Pending lawsuits" />
+</StatList>
